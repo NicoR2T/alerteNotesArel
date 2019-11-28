@@ -24,8 +24,8 @@ def afficher_notes(notes):
 
 def main():
 	pluriel = ""
-	fichier_old = '/data/Documents/Passion/arel_api/alert_notes/marks_old.json'
-	fichier_new = '/data/Documents/Passion/arel_api/alert_notes/marks_new.json'
+	fichier_old = '/data/Documents/Passion/alerteNotesArel/marks_old.json'
+	fichier_new = '/data/Documents/Passion/alerteNotesArel/marks_new.json'
 	notes_old = lecture_notes(fichier_old)
 	notes_new = lecture_notes(fichier_new)
 	nbreNotesOld = len(notes_old)

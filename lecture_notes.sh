@@ -9,14 +9,14 @@ then
 	if [ $key != "null" ]
 	then
 		key=`sed -e 's/^"//' -e 's/"$//' <<<"$key"`
-		http -v -j https://arel.eisti.fr/api/me/marks --auth-type=jwt --auth=$key | tail -1 > /data/Documents/Passion/arel_api/alert_notes/marks_new.json
-		python3 /data/Documents/Passion/arel_api/alert_notes/alert_notes.py
+		http -v -j https://arel.eisti.fr/api/me/marks --auth-type=jwt --auth=$key | tail -1 > /data/Documents/Passion/alerteNotesArel/marks_new.json
+		python3 /data/Documents/Passion/alerteNotesArel/alert_notes.py
 	else
 		echo "Le mot de passe entré n'est pas le bon."
 	fi
 elif [ "$1" = "remplacer" ]
 then
-	mv /data/Documents/Passion/arel_api/alert_notes/marks_new.json /data/Documents/Passion/arel_api/alert_notes/marks_old.json
+	mv /data/Documents/Passion/alerteNotesArel/marks_new.json /data/Documents/Passion/alerteNotesArel/marks_old.json
 else
 	echo "Erreur, il faut passer 'afficher' ou 'remplacer' en paramètre"
 fi
